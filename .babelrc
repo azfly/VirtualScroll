@@ -1,0 +1,20 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "modules": false,
+        "targets": {
+          "browsers": ["> 1%", "last 2 versions"]
+        }
+      }
+    ],
+    "stage-2"
+  ],
+  "plugins": [
+    // 编译时删除 console 的输出
+    // "babel-plugin-transform-remove-console",
+    // 运行时编译
+    "babel-plugin-transform-runtime"
+  ]
+}

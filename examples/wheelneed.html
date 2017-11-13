@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../dist/VirtualScroll.js"></script>
+    <title>是否需要滚轮</title>
+    <style>
+        .boxa, .boxb {
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+            display: inline-block;
+        }
+        p {
+            text-indent:2em;
+            
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let boxa = document.querySelector('.boxa');
+            let boxb = document.querySelector('.boxb');
+            VirtualScroll(boxa, {
+                WheelNeed: true, // 是否需要滚轮滚动，默认是 true , 如果不需要，设置为 false
+            });
+            VirtualScroll(boxb, {
+                WheelNeed: false, // 是否需要滚轮滚动，默认是 true , 如果不需要，设置为 false
+            });
+        };
+    </script>
+</head>
+<body>
+    <h3>是否需要滚轮</h3>
+    <div class="boxa">
+        <div style="width:800px;padding:30px;">
+            <h3>可以滚轮滚动</h3>
+            <p>中国，是以华夏文明为源泉、中华文化为基础，并以汉族为主体民族的多民族国家，通用汉语、汉字，汉族与少数民族被统称为“中华民族”，又称为炎黄子孙、龙的传人。</p>
+            <p>中国是世界四大文明古国之一，有着悠久的历史，距今约5000年前，以中原地区为中心开始出现聚落组织进而形成国家，后历经多次民族交融和朝代更迭，直至形成多民族国家的大一统局面。20世纪初辛亥革命后，君主政体退出历史舞台，共和政体建立。1949年中华人民共和国成立后，在中国大陆建立了人民代表大会制度的政体。</p>
+            <p>中国疆域辽阔、民族众多，先秦时期的华夏族在中原地区繁衍生息，到了汉代通过文化交融使汉族正式成型，奠定了中国主体民族的基础。后又通过与周边民族的交融，逐步形成统一多民族国家的局面，而人口也不断攀升，宋代中国人口突破一亿，清朝时期人口突破四亿，到2005年中国人口已突破十三亿。</p>
+            <p>中国文化渊远流长、博大精深、绚烂多彩，是东亚文化圈的文化宗主国，在世界文化体系内占有重要地位，由于各地的地理位置、自然条件的差异，人文、经济方面也各有特点。传统文化艺术形式有诗词、戏曲、书法、国画等，而春节、元宵、清明、端午、中秋、重阳等则是中国重要的传统节日。</p>
+        </div>
+    </div>
+    <div class="boxb">
+            <div style="width:800px;padding:30px;">
+                    <h3>禁止滚轮滚动</h3>
+                <p>中国，是以华夏文明为源泉、中华文化为基础，并以汉族为主体民族的多民族国家，通用汉语、汉字，汉族与少数民族被统称为“中华民族”，又称为炎黄子孙、龙的传人。</p>
+                <p>中国是世界四大文明古国之一，有着悠久的历史，距今约5000年前，以中原地区为中心开始出现聚落组织进而形成国家，后历经多次民族交融和朝代更迭，直至形成多民族国家的大一统局面。20世纪初辛亥革命后，君主政体退出历史舞台，共和政体建立。1949年中华人民共和国成立后，在中国大陆建立了人民代表大会制度的政体。</p>
+                <p>中国疆域辽阔、民族众多，先秦时期的华夏族在中原地区繁衍生息，到了汉代通过文化交融使汉族正式成型，奠定了中国主体民族的基础。后又通过与周边民族的交融，逐步形成统一多民族国家的局面，而人口也不断攀升，宋代中国人口突破一亿，清朝时期人口突破四亿，到2005年中国人口已突破十三亿。</p>
+                <p>中国文化渊远流长、博大精深、绚烂多彩，是东亚文化圈的文化宗主国，在世界文化体系内占有重要地位，由于各地的地理位置、自然条件的差异，人文、经济方面也各有特点。传统文化艺术形式有诗词、戏曲、书法、国画等，而春节、元宵、清明、端午、中秋、重阳等则是中国重要的传统节日。</p>
+            </div>
+        </div>
+    <div style="border-left:1px solid #ccc;margin:30px 0 0 0;font-size:18px;">
+    <pre>
+    VirtualScroll(boxa, {
+        WheelNeed: true, // 是否需要滚轮滚动，默认是 true , 如果不需要，设置为 false
+    });
+    VirtualScroll(boxb, {
+        WheelNeed: false, // 是否需要滚轮滚动，默认是 true , 如果不需要，设置为 false
+    });
+    </pre>
+    </div>
+    
+    
+    
+</body>
+</html>

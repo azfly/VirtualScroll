@@ -1,0 +1,45 @@
+{
+  "name": "virtual-scroll",
+  "version": "1.0.0",
+  "description": "A lightweight custom virtual scrollbar plug-in",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --progress --colors --hide-modules -p",
+    "watch": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/azfly/VirtualScroll.git"
+  },
+  "keywords": [
+    "scroll",
+    "browser",
+    "virtual"
+  ],
+  "author": "116485961@qq.com",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-remove-console": "^6.8.5",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.10.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "postcss-loader": "^2.0.8",
+    "source-map-loader": "^0.2.3",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.8.1"
+  },
+  "dependencies": {}
+}

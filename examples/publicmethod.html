@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>公有方法</title>
+    <style>
+        .box {
+            border-left: 6px solid #ccc;
+            margin: 12px 0 12px 0;
+            padding-left: 12px;
+        }
+
+        .pm {
+            font-size: 14px;
+            border-left: 1px solid #00f;
+            padding-left: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>公有方法</h3>
+    <div style="background:#efefef;font-size:16px;">
+        <pre>
+
+    var boxa = document.querySelector('.boxa');
+    var obj = VirtualScroll(boxa);
+
+    </pre>
+    </div>
+    <hr>
+    <div class="box">
+        <h3>obj.refresh()</h3>
+        <p> 用来刷新滚动条，常用于滚动窗口大小发生变化或滚动内容大小发生了改变 </p>
+    </div>
+    <hr>
+    <div class="box">
+        <h3>obj.restore()</h3>
+        <p> 用来恢复文档最初的样式，不会销毁对象。 </p>
+    </div>
+    <hr>
+    <div class="box">
+        <h3>obj.reachTo(onode, h, v)</h3>
+        <div class="pm">
+            <p> onode: 书签DOM对象 </p>
+            <p> h: 是否水平滚动，默认是 true, 可以设置为 false </p>
+            <p> v: 是否垂直滚动，默认是 true, 可以设置为 false </p>
+        </div>
+        <p> 用来定位onode在滚动内容中的位置，常用来定位书签。 参数不能省略 </p>
+    </div>
+    <hr>
+    <div class="box">
+        <h3>obj.horizontalSingle(number)</h3>
+        <div class="pm">
+            <p> number: 数值 </p>
+        </div>
+        <p> 水平单步滑动。如果传入 0 - 1 的小数数值，则按百分比滑动。如果传入大于1或小于-1的数值，则按像素值滑动。正数向右滑，负数向左滑 </p>
+    </div>
+    <hr>
+    <div class="box">
+        <h3>obj.verticalSingle(number)</h3>
+        <div class="pm">
+            <p> number: 数值 </p>
+        </div>
+        <p> 垂直单步滑动。如果传入 0 - 1 的小数数值，则按百分比滑动。如果传入大于1或小于-1的数值，则按像素值滑动。正数向下滑，负数向上滑 </p>
+    </div>
+    <hr>
+
+</body>
+
+</html>

@@ -1,0 +1,28 @@
+{
+    "root": true,   // eslint找到这个标识后，不会再去父文件夹中找eslint的配置文件
+    "parser": "babel-eslint",   // 使用babel-eslint来作为eslint的解析器
+    "parserOptions": {      // 设置解析器选项
+        "sourceType": "module",    // 表明自己的代码是ECMAScript模块
+        "ecmaFeatures": {
+            "impliedStrict": true  // 启用全局 strict mode
+        }
+    },
+    "extends": "standard",  // 继承eslint-config-standard里面提供的lint规则
+    "rules": { // 启用额外的规则或者覆盖基础配置中的规则的默认选项
+        "indent": ["error", 4], // 强制使用一致的缩进4空格
+        "no-new": 0, // 禁止在非赋值或条件语句中使用 new 操作符 (关闭)
+        "semi": ["error", "always"], // 强制使用分号结尾
+        "no-var": 1, // 强制使用const和let定义常量和变量 （开启）
+        "no-console": 0  // 不能使用console  ("off" 或 0 不提示，1 警告  2 错误  )，生产时设置为1，建议去除console
+    },
+    "globals": {
+        "global": true
+    },
+    "env": {   // 启用的环境，浏览器和node
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "amd": true,
+        "commonjs": true
+    }
+}
