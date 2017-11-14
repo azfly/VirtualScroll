@@ -1,6 +1,6 @@
 {
   "name": "virtualscroll",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight custom virtual scrollbar plug-in",
   "main": "index.js",
   "scripts": {
