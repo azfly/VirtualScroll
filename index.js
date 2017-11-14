@@ -2,7 +2,7 @@
     'use strict';
     // CommonJS
     if (typeof exports === 'object' && typeof module === 'object') {
-        module.exports = definition();
+        module.exports = definition;
     // RequireJS
     } else if (typeof define === 'function' && define.amd) {
         define(definition);
