@@ -422,7 +422,9 @@
             co.style.top = top + 'px';
             let x = this.$VerticalBar.clientHeight * -top / this.$Container.offsetHeight;
             this.$VerticalSlider.style.top = x + 'px';
-            this.$Options.wheels.call(this, 'up', x / VoffsetRange); // 钩子函数
+            let ocp = x / VoffsetRange;
+            this.$Options.CurrentPosition[1] = ocp;
+            this.$Options.wheels.call(this, 'up', ocp); // 钩子函数
         },
         _wheelDown (event) {
             let co = this.$Container;
@@ -438,7 +440,9 @@
             co.style.top = top + 'px';
             let x = Math.abs(top * VoffsetRange / WheelRange);
             this.$VerticalSlider.style.top = x + 'px';
-            this.$Options.wheels.call(this, 'down', x / VoffsetRange); // 钩子函数
+            let ocp = x / VoffsetRange;
+            this.$Options.CurrentPosition[1] = ocp;
+            this.$Options.wheels.call(this, 'down', ocp); // 钩子函数
         },
         /**
          * 鼠标滚轮在滚动区滚动时，可滚动内容进行滚动
@@ -457,7 +461,6 @@
                 if ((event.detail > 0 || event.wheelDelta < 0) && VoffsetTop !== VoffsetRange) {
                     self._wheelDown(event);
                 }
-                op.CurrentPosition[1] = VoffsetTop / VoffsetRange;
             };
             this.$Main.addEventListener('DOMMouseScroll', handler);
             this.$Main.addEventListener('mousewheel', handler);
