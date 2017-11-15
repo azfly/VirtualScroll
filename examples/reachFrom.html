@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../build/VirtualScroll.js"></script>
+    <title>reachFrom</title>
+    <style>
+        .boxa {
+            width: 600px;
+            height: 300px;
+            overflow: hidden;
+            border: 1px solid #ccc;
+        }
+
+        p {
+            text-indent: 2em;
+        }
+
+        button {
+            margin: 12px;
+        }
+        span {
+            color: red;
+        }
+    </style>
+    <script>
+    window.onload = function () {
+    let boxa = document.querySelector('.boxa');
+    let oba = VirtualScroll(boxa, {
+        // CurrentPosition: [0.0, 0.8],
+        dragging: function (orientation, position) {
+            fn(this, bookmark);
+        },
+        wheels: function (orientation, position) {
+            fn(this, bookmark);
+        }
+    });
+    // 菜单
+    let bm1 = document.getElementById('bm1');
+    let bm2 = document.getElementById('bm2');
+    let bm3 = document.getElementById('bm3');
+    let bm4 = document.getElementById('bm4');
+    let bookmark = [bm1, bm2, bm3, bm4];
+    let fn = function (obj, mk) {
+        let opc = obj.$Options.CurrentPosition[1];
+        let cooffset = obj.$Container.offsetHeight - obj.$Main.clientHeight; // 内容可滚动距离
+        let cogbcr = obj.$Container.getBoundingClientRect();
+        mk.forEach(function (element) {
+            let egbcr = element.getBoundingClientRect(); // 获得 元素的定位
+            if ((egbcr.top - cogbcr.top) / cooffset < opc && (egbcr.bottom - cogbcr.top) / cooffset > opc) {
+                element.style.color = 'red';
+                document.querySelector('[data-mk = ' + element.id + ']').style.color = 'red';
+            } else {
+                element.style.color = 'black';
+                document.querySelector('[data-mk = ' + element.id + ']').style.color = 'black';
+            }
+        });
+    };
+    // 初始化时就执行
+    fn(oba, bookmark);
+};
+    </script>
+</head>
+
+<body>
+    <h3>滑动垂直滚动条，定位到外部的某个菜单</h3>
+    <div class="boxa">
+        <div style="width:800px;padding:12px;">
+            <div id="bm1">
+                <h3>中国</h3>
+                <p>中国，是以华夏文明为源泉、中华文化为基础，并以汉族为主体民族的多民族国家，通用汉语、汉字，汉族与少数民族被统称为“中华民族”，又称为炎黄子孙、龙的传人。</p>
+                <p>中国是世界四大文明古国之一，有着悠久的历史，距今约5000年前，以中原地区为中心开始出现聚落组织进而形成国家，后历经多次民族交融和朝代更迭，直至形成多民族国家的大一统局面。20世纪初辛亥革命后，君主政体退出历史舞台，共和政体建立。1949年中华人民共和国成立后，在中国大陆建立了人民代表大会制度的政体。</p>
+                <p>中国疆域辽阔、民族众多，先秦时期的华夏族在中原地区繁衍生息，到了汉代通过文化交融使汉族正式成型，奠定了中国主体民族的基础。后又通过与周边民族的交融，逐步形成统一多民族国家的局面，而人口也不断攀升，宋代中国人口突破一亿，清朝时期人口突破四亿，到2005年中国人口已突破十三亿。</p>
+                <p>中国文化渊远流长、博大精深、绚烂多彩，是东亚文化圈的文化宗主国，在世界文化体系内占有重要地位，由于各地的地理位置、自然条件的差异，人文、经济方面也各有特点。传统文化艺术形式有诗词、戏曲、书法、国画等，而春节、元宵、清明、端午、中秋、重阳等则是中国重要的传统节日。</p>
+            </div>
+            <div id="bm2">
+                <h4>原始社会</h4>
+                <p>中国的原始社会，起自大约170万年前的元谋人，止于公元前21世纪夏王朝的建立。原始社会经历了原始人群和氏族公社两个时期。氏族公社又经历了母系氏族公社和父系氏族公社两个阶段。</p>
+                <p>元谋人是已知的中国境内最早的人类。北京人是原始人群时期的典型。山顶洞人已经过着氏族公社的生活。长江流域的河姆渡氏族和黄河流域的半坡氏族是母系氏族公社的繁荣时期。大汶口文化的中晚期反映了父系氏族公社的情况。</p>
+                <p>传说中，黄帝是大约4500多年前，生活在黄河流域原始部落的部落联盟首领。他提倡种植五谷，驯养牲畜，促使这个部落联盟逐步强大。他曾率领部落打败黄河上游的炎帝部落和南方的蚩尤部落。后来炎帝部落和黄帝部落结成联盟，在黄河流域长期生活、繁衍，构成了以后华夏族的主干成分。黄帝被尊奉为华夏族的祖先。中华民族被称为炎黄子孙，就是这么来的。
+                    </p>
+                <p>黄帝以后，黄河流域部落联盟的杰出首领，先后有尧、舜、禹。那时候，部落联盟首领由推选产生。尧年老了，召开部落联盟会议，大家推举有才德的舜为继承人。尧死后，舜继承了尧的位置，舜年老了，也采取同样的办法把位置让给治水有功的禹。这种更替首领位置的办法，历史上叫做“禅让”。
+                    </p>
+            </div>
+            <div id="bm3">
+                <h4>奴隶社会</h4>
+                <p>从公元前21世纪夏朝建立开始，到公元前476年春秋时期结束，是中国的奴隶社会。 </p>
+                <p>禹的儿子启建立的夏，是中国最早的奴隶制国家。公元前16世纪，夏王桀在位时，被商汤率兵灭亡。 </p>
+                <p>公元前16世纪至公元前11世纪的商朝，是奴隶社会的发展时期。商朝的农业、手工业较发达，青铜冶炼和铸造有很高水平。中国有文字可考的历史是从商朝开始的。商纣王统治时，周武王兴兵伐纣，商亡。 </p>
+                <p>公元前11世纪至公元前771年的西周，是奴隶社会的强盛时期。西周统治者实行了分封制和井田制。周厉王统治时，引起“国人暴动”，厉王逃跑，政权由周、召二公执掌。公元前771年，西周被犬戎灭亡。 </p>
+                <p>公元前770年至公元前476年的春秋时期，是奴隶社会逐步瓦解时期。这一时期，周王室衰微，诸侯争霸。由于铁器的使用和牛耕的出现，生产力提高，私田增多，促使以奴隶制国有土地为基础的井田制逐步瓦解，奴隶制走向崩溃。春秋时期，在文化上出现了繁荣局面。
+                </p>
+            </div>
+            <div id="bm4">
+                <h4>封建社会的确立和初步发展</h4>
+                <p>从公元前475年战国时期开始，到公元220年东汉灭亡，是中国封建社会的确立和初步发展时期。 </p>
+                <p>战国时期，新兴地主阶级推动了各诸侯国的变法运动。其中秦国商鞅变法比较彻底，使秦国逐渐成为诸侯国中实力最强的国家。这一时期，社会经济获得很大发展，科学技术取得显著成就，思想上出现了“百家争鸣”的繁荣局面。 </p>
+                <p>秦朝是中国历史上第一个统一的多民族的专制主义中央集权的封建国家。秦始皇为巩固专制主义中央集权所采取的一系列措施，对后世产生了重大影响。秦统一后，为了防御匈奴南侵，在连接原来秦、赵、燕三国北方长城的基础上，又向东、西两段延伸，筑成一道西起临洮、东到辽东的城防。这就是有名的万里长城。秦统治者的暴政导致了农民战争的爆发和秦王朝的灭亡。</p>
+                <p>西汉是中国历史上一个强盛的封建国家。汉高祖刘邦采取的“休养生息”政策，使社会经济得到了恢复和发展，汉文帝、汉景帝推崇黄老治术，采取“轻徭薄赋”、“与民休息”的政策出现了“文景之治”的局面，汉初几位统治者的稳定基础，从而使得汉武帝时国力达到了空前强盛。平定“七国之乱”后，加强了中央集权；通过“罢黜百家，独尊儒术”，在全国加强了思想统治；通过对匈奴战争和张骞出使西域，使多民族的国家得到进一步发展；丝绸之路的拓通，使中外经济文化交流有了新的发展。西汉末年，由于社会矛盾尖锐，农民战争爆发，西汉终于走向了灭亡。
+                </p>
+                <p>东汉初期的光武帝调整了统治政策，使社会出现了“光武中兴”的局面。但东汉后期，豪强地主势力发展，社会黑暗，终于爆发了黄巾大起义。在农民起义的打击下，东汉名存实亡。 </p>
+                <p>秦汉时期，国家统一，生产发展，各民族间政治经济联系加强，科学文化得到迅速发展。</p>
+            </div>
+            </div>
+    </div>
+    <div style="padding:12px;">
+        <ul>
+            <li data-mk="bm1">定位 中国</li>
+            <li data-mk="bm2">定位 原始社会</li>
+            <li data-mk="bm3">定位 奴隶社会</li>
+            <li data-mk="bm4">定位封建社会的确立和初步发展</li>
+        </ul>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>123
+
+</body>
+
+</html>
