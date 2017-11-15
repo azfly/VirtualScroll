@@ -1,11 +1,10 @@
-// process.env.NODE_ENV === 'production'
 const webpack = require('webpack');
 const path = require('path');
 module.exports = {
     entry: { index: ['./index.js'] },
     output: {
-        path: path.resolve(__dirname, './dist'),
-        publicPath: '/dist/',
+        path: path.resolve(__dirname, './build'),
+        publicPath: '/',
         filename: './VirtualScroll.js'
     },
 

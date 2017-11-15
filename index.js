@@ -713,6 +713,18 @@
             el.addEventListener('mouseleave', function (e) { if (op.AutoShow) { hb.style.opacity = 0; vb.style.opacity = 0; } });
             this._verticalSlide(); // 垂直滚动条可点击
             this._horizontalSlide(); // 水平滚动条可点击
+            // 如果有 iframe 时，可能导致滑块鼠标事件失败，以下代码注册一个事件，鼠标滑过 iframe 时主动触发 document mouseup 释放滚动条
+            function docMouseup () {
+                let et = document.createEvent('MouseEvents');
+                et.initEvent('mouseup', true, true);
+                document.documentElement.dispatchEvent(et);
+            }
+            let iframe = document.querySelectorAll('iframe');
+            for (let i = 0; i < iframe.length; i++) {
+                iframe[i].addEventListener('mouseover', docMouseup);
+            }
+            // 如果鼠标滑出窗口，则主动释放滚动条
+            document.documentElement.addEventListener('mouseleave', docMouseup);
         }
     };
     return new VirtualScroll(RootElement, UserConfig);

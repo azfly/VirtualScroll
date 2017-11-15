@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="../build/VirtualScroll.js"></script>
     <title>VirtualScroll 虚拟滚动条使用示例</title>
     <style>
         html, body {
@@ -22,8 +23,8 @@
             bottom:0;
             width:220px;
             box-sizing: border-box;
-            padding:20px;
-            overflow-y: scroll;
+            /* overflow-y: scroll; */
+            overflow: hidden;
 
         }
         .frame {
@@ -50,49 +51,57 @@
 </head>
 <body>
     <div class="menu">
-        <h4>安装和使用</h4>
-        <ul>
-            <li><a href="base.html" target="frame">安装和使用</a></li>
-            <li><a href="config.html" target="frame">默认配置项</a></li>
-        </ul>
-        <h4>配置示例</h4>
-        <ul>
-            <li><a href="simple.html" target="frame">简单示例</a></li>
-            <li><a href="changewidth.html" target="frame">滚动条宽度</a></li>
-            <li><a href="border.html" target="frame">改变边线</a></li>
-            <li><a href="bgcolor.html" target="frame">改变背景色</a></li>
-            <li><a href="radius.html" target="frame">圆角</a></li>
-            <li><a href="cursor.html" target="frame">鼠标样式</a></li>
-            <li><a href="wheelneed.html" target="frame">是否需要滚轮</a></li>
-            <li><a href="wheelstep.html" target="frame">设置滚轮快慢</a></li>
-            <li><a href="wheelbubble.html" target="frame">滚轮是否冒泡</a></li>
-            <li><a href="CurrentPosition.html" target="frame">初始滑动距离</a></li>
-            <li><a href="autoshow.html" target="frame">鼠标移入移出</a></li>
-        </ul>
-        
-        <h4>钩子</h4>
-        <li><a href="beforeCreate.html" target="frame">beforeCreate()</a></li>
-        <li><a href="created.html" target="frame">created()</a></li>
-        <li><a href="wheels.html" target="frame">wheels()</a></li>
-        <li><a href="dragStart.html" target="frame">dragStart()</a></li>
-        <li><a href="dragging.html" target="frame">dragging()</a></li>
-        <li><a href="dragEnd.html" target="frame">dragEnd()</a></li>
-        <h4>公有方法</h4>
-        <ul>
-            <li><a href="publicmethod.html" target="frame">公有方法</a></li>
-            <li><a href="refresh.html" target="frame">refresh()</a></li>
-            <li><a href="restore.html" target="frame">restore()</a></li>
-            <li><a href="reachTo.html" target="frame">reachTo()</a></li>
-            <li><a href="Single.html" target="frame">horizontalSingle()</a></li>
-            <li><a href="Single.html" target="frame">verticalSingle()</a></li>
-        </ul>
-        <h4>漂亮的成品</h4>
-        <li><a href="example1.html" target="frame">淡蓝色滑块</a></li>
-        <li><a href="example2.html" target="frame">垂直的小灰</a></li>
-        <li><a href="example3.html" target="frame">另类搞怪</a></li>
+        <div style="padding:12px;">
+                <h4>安装和使用</h4>
+                <ul>
+                    <li><a href="base.html" target="frame">安装和使用</a></li>
+                    <li><a href="config.html" target="frame">默认配置项</a></li>
+                </ul>
+                <h4>配置示例</h4>
+                <ul>
+                    <li><a href="simple.html" target="frame">简单示例</a></li>
+                    <li><a href="changewidth.html" target="frame">滚动条宽度</a></li>
+                    <li><a href="border.html" target="frame">改变边线</a></li>
+                    <li><a href="bgcolor.html" target="frame">改变背景色</a></li>
+                    <li><a href="radius.html" target="frame">圆角</a></li>
+                    <li><a href="cursor.html" target="frame">鼠标样式</a></li>
+                    <li><a href="wheelneed.html" target="frame">是否需要滚轮</a></li>
+                    <li><a href="wheelstep.html" target="frame">设置滚轮快慢</a></li>
+                    <li><a href="wheelbubble.html" target="frame">滚轮是否冒泡</a></li>
+                    <li><a href="CurrentPosition.html" target="frame">初始滑动距离</a></li>
+                    <li><a href="autoshow.html" target="frame">鼠标移入移出</a></li>
+                </ul>
+                
+                <h4>钩子</h4>
+                <li><a href="beforeCreate.html" target="frame">beforeCreate()</a></li>
+                <li><a href="created.html" target="frame">created()</a></li>
+                <li><a href="wheels.html" target="frame">wheels()</a></li>
+                <li><a href="dragStart.html" target="frame">dragStart()</a></li>
+                <li><a href="dragging.html" target="frame">dragging()</a></li>
+                <li><a href="dragEnd.html" target="frame">dragEnd()</a></li>
+                <li><a href="reachFrom.html" target="frame">滚动书签示例</a></li>
+                <h4>公有方法</h4>
+                <ul>
+                    <li><a href="publicmethod.html" target="frame">公有方法</a></li>
+                    <li><a href="refresh.html" target="frame">refresh()</a></li>
+                    <li><a href="restore.html" target="frame">restore()</a></li>
+                    <li><a href="reachTo.html" target="frame">reachTo()</a></li>
+                    <li><a href="Single.html" target="frame">horizontalSingle()</a></li>
+                    <li><a href="Single.html" target="frame">verticalSingle()</a></li>
+                </ul>
+                <h4>漂亮的成品</h4>
+                <li><a href="example1.html" target="frame">淡蓝色滑块</a></li>
+                <li><a href="example2.html" target="frame">垂直的小灰</a></li>
+                <li><a href="example3.html" target="frame">另类搞怪</a></li>
+        </div>
     </div>
     <div class="frame">
         <iframe src="base.html" name="frame" frameborder="0"></iframe>
     </div>
+    <script>
+        var menu = document.querySelector('.menu');
+        VirtualScroll(menu);
+        
+    </script>
 </body>
 </html>

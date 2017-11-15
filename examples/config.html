@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="../dist/VirtualScroll.js"></script>
+    <script src="../build/VirtualScroll.js"></script>
     <title>默认配置项</title>
     
 </head>
 <body>
-    <h3>默认配置项 obj.$Options</h3>
+    <h3>默认配置项</h3>
+    <h5> JS引用：vsobj.$Options</h5>
     <div style="border-left:1px solid #ccc;margin:30px 0 0 0;font-size:18px;width:100%;">
     <pre>
     let boxa = document.querySelector('.boxa');
-    VirtualScroll(boxa, {
+    let vsobj = VirtualScroll(boxa, {
         CurrentPosition: [0, 0], // 滑块的当前位置。默认：[0,0], 第1个元素表示水平滚动滑块滑动距离的百分比, 第2个元素表示垂直滚动滑块滑动距离的百分比, 取值 0 - 1，表示百分比
         VBwidth: 16, // 垂直滚动条的宽度 默认 16px
         HBheight: 16, // 水平滚动条的高度 默认 16px

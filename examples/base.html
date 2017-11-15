@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="../dist/VirtualScroll.js"></script>
+    <script src="../build/VirtualScroll.js"></script>
     <title>Simple</title>
     <style>
     .bk {background:#efefef;padding:8px;}
@@ -15,18 +15,16 @@
 <body>
     <h3>安装与使用</h3>
     <h4>一、安装方法</h4>
-    <p class="bk">npm install VirtualScroll --save</p>
+    <p class="bk">npm install virtualscroll --save</p>
     <h4>二、使用方法</h4>
     <div style="border-left:1px solid #ccc;margin:30px 0 0 0;font-size:16px;width:100%;padding-left:8px;">
-        <h5 class="bk">页面引入</h5>
-        &lt;script src="VirtualScroll.js"&gt;&lt;/script&gt;</br>
+        <h5 class="bk">构建方法一，页面引入</h5>
+        &lt;script src="node_modules/VirtualScroll/build/VirtualScroll.js"&gt;&lt;/script&gt;</br>
         VirtualScroll(DOM对象);</br>
-        <h5 class="bk">RequireJS</h5>
-        require(['VirtualScroll'], function (VS){ VS(DOM对象); }); <br>
-        <h5 class="bk">CommonJS</h5>
-        let VS = require('VirtualScroll.js');</br>
+        <h5 class="bk">构建方法二，require</h5>
+        let VS = require('VirtualScroll');</br>
         VS(DOM对象);</br>
-        <h5 class="bk">ES2015</h5>
+        <h5 class="bk">构建方法三, import</h5>
         import VS from 'VirtualScroll';</br>
         VS(DOM对象);</br>
 
